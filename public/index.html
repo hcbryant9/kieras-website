@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiera O'Harrow</title>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-left">Kiera O'Harrow</div>
+        <div class="header-right">
+            <button class="index-btn" onclick="spinAndGo('bio.html')">Bio</button>
+            <button class="index-btn" onclick="spinAndGo('contact.html')">Contact</button>
+        </div>
+    </header>
+</head>
+<body>
+        <div class="octagon-bg">
+            <div class="octagon-layout">
+        <img src="assets/images/home/distorted hammer.png" alt="Hammer" class="hammer center-hammer">
+        <!-- 8 nails in an octagon -->
+                <div class="oct-nail nail1">
+                    <div class="cover-nail-container" onclick="spinAndGo('art1.html', 180)">
+                    <img src="assets/images/cache/cache_one_cover.png" alt="Art 1" class="cover-img" width="140" height="140">
+                    </div>
+                    <button class="index-btn" onclick="spinAndGo('art1.html', 180)">Art 1</button>
+                </div>
+                <div class="oct-nail nail2">
+                    <div class="cover-nail-container" onclick="spinAndGo('art2.html', 225)">
+                    <img src="assets/images/cache/cache_one_cover.png" alt="Art 2" class="cover-img" width="140" height="140">
+                    </div>
+                    <button class="index-btn" onclick="spinAndGo('art2.html', 225)">Art 2</button>
+                </div>
+                <div class="oct-nail nail3">
+                    <div class="cover-nail-container" onclick="spinAndGo('art3.html', 270)">
+                    <img src="assets/images/cache/cache_one_cover.png" alt="Art 3" class="cover-img" width="200" height="140">
+                    </div>
+                    <button class="index-btn" onclick="spinAndGo('art3.html', 270)">Art 3</button>
+                </div>
+                <div class="oct-nail nail4">
+                    <div class="cover-nail-container" onclick="spinAndGo('art4.html', 315)">
+                    <img src="assets/images/cache/cache_two_cover.png" alt="Art 4" class="cover-img" width="140" height="140">
+                    </div>
+                    <button class="index-btn" onclick="spinAndGo('art4.html', 315)">Art 4</button>
+                </div>
+                <div class="oct-nail nail5">
+                    <div class="cover-nail-container" onclick="spinAndGo('art5.html', 360)">
+                    <img src="assets/images/cache/cache_two_cover.png" alt="Art 5" class="cover-img" width="140" height="140">
+                    </div>
+                    <button class="index-btn" onclick="spinAndGo('art5.html', 360)">Art 5</button>
+                </div>
+                <div class="oct-nail nail6">
+                    <div class="cover-nail-container" onclick="spinAndGo('art6.html', 405)">
+                    <img src="assets/images/cache/cache_two_cover.png" alt="Art 6" class="cover-img" width="140" height="140">
+                    </div>
+                    <button class="index-btn" onclick="spinAndGo('art6.html', 405)">Art 6</button>
+                </div>
+                <div class="oct-nail nail7">
+                    <div class="cover-nail-container" onclick="spinAndGo('art7.html', 450)">
+                    <img src="assets/images/cache/cache_two_cover.png" alt="Art 7" class="cover-img" width="140" height="140">
+                    </div>
+                    <button class="index-btn" onclick="spinAndGo('art7.html', 450)">Art 7</button>
+                </div>
+                <div class="oct-nail nail8">
+                    <div class="cover-nail-container" onclick="spinAndGo('art8.html', 495)">
+                    <img src="assets/images/cache/cache_two_cover.png" alt="Art 8" class="cover-img" width="140" height="140">
+                    </div>
+                    <button class="index-btn" onclick="spinAndGo('art8.html', 495)">Art 8</button>
+                </div>
+            </div>
+        </div>
+</body>
+<script>
+function spinAndGo(url, angle) {
+    const hammer = document.querySelector('.hammer');
+    if (!hammer) {
+        window.location.href = url;
+        return;
+    }
+    hammer.style.transition = 'none';
+    hammer.style.transform = 'translate(-50%, -50%) rotate(0deg)';
+    // Force reflow to reset
+    void hammer.offsetWidth;
+    hammer.style.transition = 'transform 0.7s cubic-bezier(0.4, 2, 0.6, 1)';
+    hammer.style.transform = `translate(-50%, -50%) rotate(${angle || 360}deg)`;
+    setTimeout(() => {
+        window.location.href = url;
+    }, 700);
+}
+</script>
+</html>

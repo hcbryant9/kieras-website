@@ -1,0 +1,334 @@
+@media (max-width: 480px) {
+  .octagon-bg {
+    width: 100vw;
+    min-width: 0;
+    max-width: 100vw;
+    height: auto;
+    margin: 2vw 0 2vw 0;
+    padding: 0;
+    overflow-x: auto;
+  }
+  .octagon-layout {
+    width: 340px;
+    height: 340px;
+    min-width: 340px;
+    min-height: 340px;
+    max-width: 340px;
+    max-height: 340px;
+    aspect-ratio: 1/1;
+    padding: 0;
+    position: relative;
+  }
+  .cover-nail-container {
+    width: 38px !important;
+    max-width: 38px !important;
+    min-width: 38px !important;
+  }
+  .cover-nail-container .cover-img {
+    width: 38px !important;
+    height: 38px !important;
+    max-width: 38px !important;
+    min-width: 38px !important;
+    margin-bottom: 6px;
+  }
+  .center-hammer {
+    width: 38px !important;
+    min-width: 38px !important;
+    max-width: 38px !important;
+  }
+  /* Adjust oct-nail positions for small screens */
+  .nail1 { top: 2%; left: 50%; transform: translate(-50%, 0); }
+  .nail2 { top: 13%; left: 87%; transform: translate(-50%, -50%); }
+  .nail3 { top: 50%; left: 98%; transform: translate(-50%, -50%); }
+  .nail4 { top: 87%; left: 87%; transform: translate(-50%, -50%); }
+  .nail5 { top: 98%; left: 50%; transform: translate(-50%, -100%); }
+  .nail6 { top: 87%; left: 13%; transform: translate(-50%, -50%); }
+  .nail7 { top: 50%; left: 2%; transform: translate(-50%, -50%); }
+  .nail8 { top: 13%; left: 13%; transform: translate(-50%, -50%); }
+}
+/* Responsive octagon layout for mobile */
+@media (max-width: 700px) {
+  .octagon-bg {
+    width: 100vw;
+    min-width: 0;
+    max-width: 100vw;
+    height: auto;
+    margin: 4vw 0 4vw 0;
+    padding: 0;
+  }
+  .octagon-layout {
+    width: 96vw;
+    height: 96vw;
+    min-width: 0;
+    min-height: 0;
+    max-width: 96vw;
+    max-height: 96vw;
+    aspect-ratio: 1/1;
+    padding: 0;
+  }
+  .cover-nail-container {
+    width: 18vw !important;
+    max-width: 80px !important;
+    min-width: 40px !important;
+  }
+  .cover-nail-container .cover-img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 80px !important;
+    min-width: 40px !important;
+    margin-bottom: 10px;
+  }
+  .center-hammer {
+    width: 18vw !important;
+    min-width: 40px !important;
+    max-width: 80px !important;
+  }
+  .oct-nail {
+    /* Prevents overflow and keeps nails in circle */
+  }
+}
+.cover-nail-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 15vw;
+  max-width: 110px;
+  min-width: 60px;
+  cursor: pointer;
+}
+.cover-nail-container .nail-img-on-cover {
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 44%;
+  min-width: 20px;
+  max-width: 38px;
+  z-index: 1;
+}
+.cover-nail-container .cover-img {
+
+  display: block;
+  z-index: 2;
+  position: relative;
+  margin-bottom: 16px;
+}
+.octagon-layout {
+  position: relative;
+  width: 80vw;
+  max-width: 600px;
+  aspect-ratio: 1/1;
+  min-width: 280px;
+  min-height: 280px;
+  height: 80vw;
+  max-height: 600px;
+  margin: 8vh auto 8vh auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.center-hammer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 15vw;
+  max-width: 100px;
+  min-width: 40px;
+  z-index: 2;
+}
+.oct-nail {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* 8 nails in a circle (octagon) */
+.nail1 { top: 0%; left: 50%; transform: translate(-50%, 0); }
+.nail2 { top: 15%; left: 85%; transform: translate(-50%, -50%); }
+.nail3 { top: 50%; left: 100%; transform: translate(-50%, -50%); }
+.nail4 { top: 85%; left: 85%; transform: translate(-50%, -50%); }
+.nail5 { top: 100%; left: 50%; transform: translate(-50%, -100%); }
+.nail6 { top: 85%; left: 15%; transform: translate(-50%, -50%); }
+.nail7 { top: 50%; left: 0%; transform: translate(-50%, -50%); }
+.nail8 { top: 15%; left: 15%; transform: translate(-50%, -50%); }
+.oct-nail .nail-img {
+  width: 9vw;
+  max-width: 60px;
+  min-width: 28px;
+  margin-bottom: 10px;
+}
+.oct-nail .index-btn {
+  margin-bottom: 0;
+}
+.hammer.spin {
+  animation: hammer-spin 0.5s cubic-bezier(0.4, 2, 0.6, 1) forwards;
+}
+
+@keyframes hammer-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(90deg); }
+}
+/* Simple layout for hammer and nails portfolio */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: #f8f8f8;
+    position: relative;
+    font-family: "Amazon Ember",Arial,sans-serif;
+/* Header styles */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px 14px 40px;
+  z-index: 10;
+}
+.header-left {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #222;
+  letter-spacing: 1px;
+}
+.header-right {
+  display: flex;
+  gap: 18px;
+}
+}
+
+
+.oct-nail.nail5 {
+  margin-bottom: 40px;
+}
+
+.nails-row {
+    position: absolute;
+    bottom: 60px;
+    left: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    z-index: 1;
+}
+
+.nail-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nail-img {
+    width: 60px;
+    margin-bottom: 10px;
+}
+
+.nail-label {
+    font-size: 1.1rem;
+    color: #333;
+    background: rgba(255,255,255,0.8);
+    padding: 4px 12px;
+    border-radius: 8px;
+    margin-top: 2px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.07);
+}
+
+  .index-btn {
+    background-image: linear-gradient(#f7f8fa ,#e7e9ec);
+    border-color: #000000 #000000 #000000;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3px;
+    box-shadow: rgba(255,255,255,.6) 0 1px 0 inset;
+    box-sizing: border-box;
+    color: #0f1111;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Amazon Ember",Arial,sans-serif;
+    font-size: 12px;
+    height: 20px;
+    font-size: 13px;
+    outline: 0;
+    overflow: hidden;
+    padding: 0 7px;
+    text-align: center;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+
+  .index-btn:active {
+    border-bottom-color: #a2a6ac;
+  }
+
+  .index-btn:active:hover {
+    border-bottom-color: #626468;
+   
+  }
+
+  .index-btn:hover {
+    border-color: #a3a3a3 #a3a3a3 #a3a3a3;
+    
+  }
+
+  .index-btn:focus {
+    border-color: #a2a6ac;
+  
+    box-shadow: none;
+    outline: 1;
+  }
+  
+  .input-btn{
+    background-image: linear-gradient(#f7f8fa ,#e7e9ec);
+    border-color: #000000 #000000 #000000;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3px;
+    box-shadow: rgba(255,255,255,.6) 0 1px 0 inset;
+    box-sizing: border-box;
+    color: #0f1111;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Amazon Ember",Arial,sans-serif;
+    font-size: 12px;
+    height: 20px;
+    font-size: 13px;
+    outline: 0;
+    overflow: hidden;
+    padding: 0 7px;
+    text-align: center;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    align-items: center;
+  }
+  .input-btn:active {
+    border-bottom-color: #a2a6ac;
+  }
+
+  .input-btn:active:hover {
+    border-bottom-color: #626468;
+   
+  }
+
+  .input-btn:hover {
+    border-color: #a3a3a3 #a3a3a3 #a3a3a3;
+    
+  }
+
+  .input-btn:focus {
+    border-color: #a2a6ac;
+  
+    box-shadow: none;
+    outline: 1;
+  }
