@@ -34,29 +34,8 @@
     .layout {
       display: block;
       min-height: 100vh;
-     
-    }
-    .scrolling-banner {
-        width: 60%;
-        margin: 0 auto;
-        padding: 10px 0;
-        background-color: #ffffff;
-        text-align: center;
-        overflow: hidden;
-        white-space: nowrap;
-        position: relative;
     }
     
-    .scrolling-banner span {
-        display: inline-block;
-        padding-left: 15%;
-        animation: scrollText 15s linear infinite;
-    }
-    
-    @keyframes scrollText {
-        0% { transform: translateX(100%); }
-        100% { transform: translateX(-100%); }
-    }
     table {
         border-collapse: collapse;
         /* border: 1px solid #000000; */
@@ -75,31 +54,12 @@
         text-align: center; /* Center content horizontally */
     }
    
-    #jpg-photo,
-    #project-photo,
-    #video-photo,
-    #blog-photo,
-    #websites-photo,
-    #music-photo {
-        width: 50%; /* Responsive width */
-        max-width: 180px;
-        height: auto;
-        display: block;
-        margin: 0 auto; /* Center images horizontally */
-    }
-    #outputCanvas {
-        width: 520px;
-        height: 350px;
-        max-width: 100%;
-        display: block;
-        margin: 0 auto;
-    }
-    .hidden-input {
-        position: absolute;
-        top: -9999px;
-        left: -9999px;
-    }
-    
+   .item-box {
+        background-color: rgba(255, 253, 245, 0.126); /* eggshell with subtle transparency */
+        padding: 11px;
+        padding-bottom: 0px;
+        display: inline-block;
+        }
    .main {
       flex: 1;
       padding: 20px;
@@ -110,14 +70,93 @@
       background-position: center center;
       box-sizing: border-box;
       border: 32px solid transparent;
-      border-image: url('assets/images/frame.jpg') 100 round;
       border-radius: 12px;
-      margin-left: auto;
+      margin-left: 30%;
       margin-right: auto;
       margin-top: 25px;
       max-width: 600px;
       box-shadow: 0 4px 24px 0 rgba(0,0,0,0.13);
     }
+    #table1 img {
+        width: 150px !important;
+        height: 150px !important;
+        max-width: none !important;
+    }
+
+    .caption-link {
+      color: #1565c0;
+      text-decoration: underline;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 1.08em;
+    }
+    .caption-link:visited {
+      color: #0d47a1;
+    }
+    .caption-link:hover {
+      color: #1976d2;
+    }
+    
+
+
+
+@media (max-width: 768px) {
+  .main {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    padding: 10px;
+
+    background: transparent;
+    background-image: url('assets/images/wood2.jpg');
+    background-size: 250% auto;
+    background-repeat: repeat;
+    background-position: center center;
+  }
+
+  table {
+    width: 100%;
+    display: block;
+  }
+
+  #table1 td,
+  #table2 td {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  #table1 img,
+  #table2 img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 350px;
+    aspect-ratio: 1 / 1;   
+  }
+
+  .caption-link {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1em;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .header-right button {
+    display: inline-block;
+    margin: 5px;
+  }
+
+  footer {
+    font-size: 0.8em;
+  }
+}
 
 </style>
 
@@ -135,38 +174,52 @@
         <div class="main">
         <table id="table1">
             <tr>
-                <td>
-                    <img id="video-photo" src="assets/images/bp-film.jpg">
-                    <center>videos</center>
+            <td>
+                <div class="item-box">
+                    <img id="project-photo" src="assets/images/sculpture/MOMmetalsculputre.documentation.fullsize.jpg" width="300" height="200" alt="coding projects">
+                    <a class="caption-link" href="sculpture.html">MOM</a>
+                    
+
+                </div>
                 </td>
                 <td>
-                    <img id="jpg-photo" src="assets/images//cache/cache_two_cover.png">
-                    <center>photos</center>
+                <div class = "item-box">
+                    <img id="jpg-photo" src="assets/images/sculpture/a.peck.sculpture.documentation.2 (1).jpg" width="1000" height="400" alt="photos">
+                    <a class="caption-link" href="digital.html">A Peck                      </a>
+                </div>
                 </td>
                 <td>
-                    <img id="project-photo" src="assets/images//cache/cache_two_cover.png">
-                    <center>coding projects</center>
+                <div class="item-box">
+                    <img id="video-photo" src="assets/images/sculpture/everyoneishangingoutwithoutyou.sculpture.documentation.jpg" width="400" height="450" alt="videos">
+                    <a class="caption-link" href="film.html">everyone is hanging out with you</a>
                 </td>
-            </tr>
-            <tr>
+                </div>
+                </tr>
                 <td>
-                    <img id="blog-photo" src="assets/images//cache/cache_two_cover.png">
-                    <center>blog posts</center>
+                <div class="item-box">
+                    <img id="video-photo" src="assets/images/sculpture/everythingIhaveverlost.sculpture.documentation.jpg" width="400" height="450" alt="videos">
+                    <a class="caption-link" href="film.html">everythin I have ever lost</a>
                 </td>
+                </div>
                 <td>
-                    <img id="websites-photo" src="assets/images//cache/cache_two_cover.png">
-                    <center>websites</center>
+                <div class="item-box">
+                    <img id="video-photo" src="assets/images/sculpture/IMG_0795_VSCO (1).JPG" width="400" height="450" alt="videos">
+                    <a class="caption-link" href="film.html">cache and cache 2</a>
                 </td>
+                </div>
                 <td>
-                    <img id="music-photo" src="assets/images//cache/cache_two_cover.png">
-                    <center>music</center>
+                <div class="item-box">
+                    <img id="video-photo" src="assets/images/sculpture/haftseen7.jpg" width="400" height="450" alt="videos">
+                    <a class="caption-link" href="film.html">haftseen7</a>
                 </td>
-            </tr>
+                </div>
+                </tr>
         </table>
         </div>
         <br>
         <br>
-    
+        
+
     </div>
    
 </body>
