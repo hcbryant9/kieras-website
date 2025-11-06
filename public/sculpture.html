@@ -55,11 +55,35 @@
     }
    
    .item-box {
-        background-color: rgba(255, 253, 245, 0.126); /* eggshell with subtle transparency */
-        padding: 11px;
-        padding-bottom: 0px;
-        display: inline-block;
-        }
+     /* background-color: rgba(255, 253, 245, 0.126);  */
+     padding: 11px;
+     padding-bottom: 0px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     box-sizing: border-box;
+     /* Give each box a consistent minimum height so captions align */
+     min-height: 200px;
+     /* allow the caption to stick to the bottom */
+    }
+  .title-item-box {
+    background-color: rgba(255, 253, 245, 0.464); /* eggshell with subtle transparency */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 0 1rem 0;
+    padding: 6px 0;
+  }
+  .header-center {
+    background-color: rgba(255, 253, 245, 0.464); /* eggshell with subtle transparency */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 0 1rem 0;
+    padding: 6px 0;
+  }
    .main {
       flex: 1;
       padding: 20px;
@@ -71,15 +95,15 @@
       box-sizing: border-box;
       border: 32px solid transparent;
       border-radius: 12px;
-      margin-left: 30%;
+      margin-left: 15%;
       margin-right: auto;
       margin-top: 25px;
-      max-width: 600px;
+      max-width: 1100px;
       box-shadow: 0 4px 24px 0 rgba(0,0,0,0.13);
     }
     #table1 img {
-        width: 150px !important;
-        height: 150px !important;
+        width: 260px !important;
+        height: 260px !important;
         max-width: none !important;
     }
 
@@ -89,6 +113,9 @@
       cursor: pointer;
       font-weight: 500;
       font-size: 1.08em;
+      text-align: center;
+      display: inline-block;
+      margin-top: 0.7rem; /* small spacing directly under the photo */
     }
     .caption-link:visited {
       color: #0d47a1;
@@ -172,11 +199,12 @@
     <div class="layout">
         <br>
         <div class="main">
+          <div class="header-center"> sculpture </div>
         <table id="table1">
             <tr>
             <td>
                 <div class="item-box">
-                    <img id="project-photo" src="assets/images/sculpture/MOMmetalsculputre.documentation.fullsize.jpg" width="300" height="200" alt="coding projects">
+                    <img id="project-photo" src="assets/images/sculpture/MOMmetalsculputre.documentation.fullsize.jpg" width="400" height="250" alt="coding projects">
                     <a class="caption-link" href="sculpture.html">MOM</a>
                     
 
@@ -215,7 +243,12 @@
                 </div>
                 </tr>
         </table>
-        </div>
+      </div>
+        <br><br>
+        <div class = "title-item-box">
+            <a class="caption-link" href="index.html">&lt;-- back to index</a>
+          </div>
+
         <br>
         <br>
         
