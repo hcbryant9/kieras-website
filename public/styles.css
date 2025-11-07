@@ -85,6 +85,7 @@
   }
   .oct-nail {
     /* Prevents overflow and keeps nails in circle */
+    overflow: hidden;
   }
 }
 .cover-nail-container {
@@ -332,3 +333,30 @@ body {
     box-shadow: none;
     outline: 1;
   }
+
+/* Image scaling utility for portfolio photos
+   - Set --photo-scale (percentage or px) to control global image size
+   - Images keep their intrinsic aspect ratio via height: auto
+   - Override per-section by setting --photo-scale on a parent element
+*/
+:root {
+  --photo-scale: 80%; /* change this to e.g. 100% or 60% to adjust all images */
+}
+
+.scaled-photo {
+  width: var(--photo-scale);
+  max-width: 100%; /* never exceed container */
+  height: auto; /* preserve aspect ratio */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* On small screens we still want images to be responsive */
+@media (max-width: 768px) {
+  .scaled-photo {
+    width: 100% !important;
+    max-width: 350px;
+    height: auto !important;
+  }
+}
