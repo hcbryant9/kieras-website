@@ -70,10 +70,10 @@
       box-sizing: border-box;
       border: 32px solid transparent;
       border-radius: 12px;
-      margin-left: 30%;
+      margin-left: 24%;
       margin-right: auto;
       margin-top: 25px;
-      max-width: 600px;
+      max-width: 800px;
       box-shadow: 0 4px 24px 0 rgba(0,0,0,0.13);
     }
 
@@ -97,7 +97,28 @@
       color: #1976d2;
     }
     
+    .image-modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.85);
+        justify-content: center;
+        align-items: center;
+        cursor: zoom-out;
+        }
 
+        /* Enlarged image */
+        .image-modal img {
+        max-width: 90%;
+        max-height: 90%;
+        /* box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); */
+        /* border-radius: 4px; */
+        transition: transform 0.3s ease;
+        }
+        .image-modal.show img {
+        transform: scale(1);
+        }
 
 
 @media (max-width: 768px) {
@@ -162,6 +183,33 @@
 </style>
 
 <body>
+  <div class="image-modal" id="imageModal">
+    <img src="" alt="Enlarged photo">
+    </div>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("imageModal");
+    const modalImg = modal.querySelector("img");
+
+    document.querySelectorAll(".scaled-photo").forEach(img => {
+        img.addEventListener("click", () => {
+        modalImg.src = img.src;
+        modal.style.display = "flex";
+        setTimeout(() => modal.classList.add("show"), 10);
+        });
+    });
+
+    // Close modal when clicking outside the image
+    modal.addEventListener("click", () => {
+        modal.classList.remove("show");
+        setTimeout(() => {
+        modal.style.display = "none";
+        modalImg.src = "";
+        }, 200);
+    });
+    });
+    </script>
     <header class="site-header">
         <div class="header-left">Kiera O'Harrow</div>
         <div class="header-right">
@@ -190,12 +238,18 @@
                 </td>
                 <td>
                 <div class="item-box">
+                    <img id="measuring-photo" src="assets/images/home-page/ruler.png">
+                    <a class="caption-link" href="design.html">design</a>
+                </div>
+                </td>
+                <td>
+                <div class="item-box">
                     <img id="video-photo" src="assets/images/home-page/cam.png" width="400" height="450" alt="videos">
                     <a class="caption-link" href="photography.html">film photography</a>
                 </td>
                 </div>
-            
-        </table>
+                
+         </table>
         </div>
         <br>
         <br>

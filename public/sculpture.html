@@ -69,6 +69,28 @@
         padding: 11px;
         display: inline-block;
         }
+    .image-modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.85);
+        justify-content: center;
+        align-items: center;
+        cursor: zoom-out;
+        }
+
+        /* Enlarged image */
+        .image-modal img {
+        max-width: 90%;
+        max-height: 90%;
+        /* box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); */
+        /* border-radius: 4px; */
+        transition: transform 0.3s ease;
+        }
+        .image-modal.show img {
+        transform: scale(1);
+        }
    .main {
         /* background-image: url("assets/images/Screenshot 2025-11-08 102313.png"); */
         /* background-size: cover;
@@ -184,6 +206,33 @@
 </style>
 
 <body>
+    <div class="image-modal" id="imageModal">
+    <img src="" alt="Enlarged photo">
+    </div>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("imageModal");
+    const modalImg = modal.querySelector("img");
+
+    document.querySelectorAll(".scaled-photo").forEach(img => {
+        img.addEventListener("click", () => {
+        modalImg.src = img.src;
+        modal.style.display = "flex";
+        setTimeout(() => modal.classList.add("show"), 10);
+        });
+    });
+
+    // Close modal when clicking outside the image
+    modal.addEventListener("click", () => {
+        modal.classList.remove("show");
+        setTimeout(() => {
+        modal.style.display = "none";
+        modalImg.src = "";
+        }, 200);
+    });
+    });
+    </script>
     <header class="site-header">
         <div class="header-left">Kiera O'Harrow</div>
         <div class="header-right">
