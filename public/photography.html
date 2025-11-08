@@ -2,10 +2,382 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+    <meta property="og:title" content="Kiera O'Harrow" />
+
+    <meta name="description" content="Kiera O'Harrow" />
+    <meta property="og:description" content="Kiera O'Harrow" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="assets/images//cache/cache_one_cover.png" type="image/png" />
+    <link rel="apple-touch-icon" href="assets/images//cache/cache_one_cover.png" type="image/png" />
     
+    <title>Kiera O'Harrow</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<style>
+    body{
+        /* background-color: rgb(104, 83, 55); */
+        background-image: url('assets/images/ezgif.com-speed.gif');
+        background-size: cover; 
+        background-repeat:repeat; 
+        background-position: center; 
+        background-size: 500% auto;
+        /* background-image: url("assets/images/peg-board-perforated-texture-background-material-with-round-holes-pattern-board-vector-illustration_503038-3340.jpg"); */
+    }
+    
+    .layout {
+    width: 100%;
+    }
+    footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #ffffff;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+    .header-center {
+    text-align: center;
+    padding-bottom: 15px;
+    margin-left: 50px;
+    margin-right: 50px;
+    }
+    table {
+        border-collapse: collapse;
+        /* border: 1px solid #000000; */
+        width: 100%; /* Make table fill the main div */
+        margin: 0 auto; /* Center table horizontally if smaller */
+    }
+    #table1 td {
+        /* border: 1px solid #000000; */
+        padding: 10px 0 0 0; /* Add padding to the top */
+        margin: 0; /* Remove margin */
+        text-align: center; /* Center content horizontally */
+    }
+    #table2 td{
+        /* border: 1px solid #000000; */
+        margin: 0; /* Remove margin */
+        text-align: center; /* Center content horizontally */
+    }
+   
+   .item-box {
+        
+        padding: 11px;
+        display: inline-block;
+        }
+   .main {
+        /* background-image: url("assets/images/Screenshot 2025-11-08 102313.png"); */
+        /* background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center; */
+        /* border: 8px dotted rgba(89, 84, 63); */
+        /* make all .main sections appear continuous */
+        background: rgba(255, 255, 255, 0.85);
+        box-sizing: border-box;
+        border: 3px solid rgba(233, 233, 233, 0.56);
+        margin: 0;
+        padding: 40px 0;
+        width: 100%;
+        max-width: 1100px;
+        margin-left: 16%;
+        box-sizing: border-box;
+
+        }
+
+        .main + .main {
+        margin-top: 0; /* ensure no gap between stacked .main sections */
+        }
+    .scaled-photo {
+        width: var(--photo-scale);
+        max-width: 100%; 
+        height: auto; 
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        }
+
+    .caption-link {
+      color: #1565c0;
+      text-decoration: underline;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 1.08em;
+    }
+    .caption-link:visited {
+      color: #0d47a1;
+    }
+    .caption-link:hover {
+      color: #1976d2;
+    }
+    
+    .image-modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.85);
+        justify-content: center;
+        align-items: center;
+        cursor: zoom-out;
+        }
+
+        /* Enlarged image */
+        .image-modal img {
+        max-width: 90%;
+        max-height: 90%;
+        /* box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); */
+        /* border-radius: 4px; */
+        transition: transform 0.3s ease;
+        }
+        .image-modal.show img {
+        transform: scale(1);
+        }
+
+
+@media (max-width: 768px) {
+  .main {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    padding: 10px;
+
+    background: transparent;
+    background-color: white;
+  }
+
+  table {
+    width: 100%;
+    display: block;
+  }
+
+  #table1 td,
+  #table2 td {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  
+  .scaled-photo {
+    width: 100% !important;
+    max-width: 350px;
+    height: auto !important;
+  }
+  .caption-link {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1em;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .header-center {
+    text-align: center;
+    padding-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    }
+  .header-right button {
+    display: inline-block;
+    margin: 5px;
+  }
+
+  footer {
+    font-size: 0.8em;
+  }
+}
+
+</style>
+
+<body>
+        <div class="image-modal" id="imageModal">
+    <img src="" alt="Enlarged photo">
+    </div>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("imageModal");
+    const modalImg = modal.querySelector("img");
+
+    document.querySelectorAll(".scaled-photo").forEach(img => {
+        img.addEventListener("click", () => {
+        modalImg.src = img.src;
+        modal.style.display = "flex";
+        setTimeout(() => modal.classList.add("show"), 10);
+        });
+    });
+
+    // Close modal when clicking outside the image
+    modal.addEventListener("click", () => {
+        modal.classList.remove("show");
+        setTimeout(() => {
+        modal.style.display = "none";
+        modalImg.src = "";
+        }, 200);
+    });
+    });
+    </script>
+    <header class="site-header">
+        <div class="header-left">Kiera O'Harrow</div>
+        <div class="header-right">
+            <button class="index-btn" onclick="spinAndGo('bio.html')">Bio</button>
+            <button class="index-btn" onclick="spinAndGo('contact.html')">Contact</button>
+        </div>
+    </header>
+    
+    <div class="layout">
+        <br>
+    
+
+
+    <div class="main">
+        <table id="table1">
+            <div class="header-center"> <i>Film Photography</i> </div>
+            <tr>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/11july2024BW.jpg" alt="11july2024BW"></div></td>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/13july2024BW.jpg" alt="13july2024BW"></div></td>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/21july2024BW.jpg" alt="21july2024BW"></div></td>
+            </tr>
+            <tr>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/24july2024BW.jpg" alt="24july2024BW"></div></td>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/25590001.JPG" alt="25590001"></div></td>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/6july2024BW.jpg" alt="6july2024BW"></div></td>
+            </tr>
+            <tr>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/9july2024BW.jpg" alt="9july2024BW"></div></td>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/Cam.BWfilm.42.jpg" alt="cam42"></div></td>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/barbershop.BWfilm.31.jpg" alt="barbershop"></div></td>
+                
+            </tr>
+            <tr>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/cam.BWfilm.3.jpg" alt="cam3"></div></td>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/cam.BWfilm.47.jpg" alt="cam47"></div></td>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/church.BWfilm.28.jpg" alt="church28"></div></td>
+            </tr>
+            <tr>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/Camtruck.BWfilm.5.jpg" alt="camtruck5"></div></td>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/Camtruck.BWfilm.6.jpg" alt="camtruck6"></div></td>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/captrail.BWfilm.44.jpg" alt="captrail44"></div></td>
+            </tr>
+            <tr>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/captrail.BWfilm.52.jpg" alt="captrail52"></div></td>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/cam.BWfilm.48.jpg" alt="cam48"></div></td>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/creek.BWfilm.10.jpg" alt="creek10"></div></td>
+            </tr>
+            <tr>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/creek.BWfilm.12.jpg" alt="creek12"></div></td>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/creek.BWfilm.16.jpg" alt="creek16"></div></td>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/creek.BWfilm.8.jpg" alt="creek8"></div></td>
+            </tr>
+            <tr>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/creek.BWfilm.9.jpg" alt="creek9"></div></td>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/field.BWfilm.46.jpg" alt="field46"></div></td>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/flower.BWfilm.30.jpg" alt="flower30"></div></td>
+            </tr>
+            <tr>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/flower.BWfilm.35.jpg" alt="flower35"></div></td>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/forrest.BWfilm.15.jpg" alt="forrest15"></div></td>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/plant.BWfilm.12.jpg" alt="plant12"></div></td>
+            </tr>
+            <tr>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/plant.BWfilm.18.jpg" alt="plant18"></div></td>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/room.BWfilm.39.jpg" alt="room39"></div></td>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/roomBWfilm.40.jpg" alt="room40"></div></td>
+            </tr>
+            <tr>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/tenniscourt.BWfilm.20.jpg" alt="tenniscourt20"></div></td>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/tenniscourt.BWfilm.24.jpg" alt="tenniscourt24"></div></td>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/tenniscourts.BWfilm.22.jpg" alt="tenniscourts22"></div></td>
+            </tr>
+            <tr>
+                <!-- <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/trainsation.BWfilm.50.jpg" alt="trainsation50"></div></td> -->
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/trainstation.BWfilm.49.jpg" alt="trainstation49"></div></td>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/trainstation.BWfilm.51.jpg" alt="trainstation51"></div></td>
+            </tr>
+        </table>
+        <!-- <div class="header-center"> <center><br>Colored Film</center> </div> -->
+    </div>
+
+    <div class="main">
+        <table id="table1">
+            <!-- <div class="header-center"> <i>Colored Film</i> </div> -->
+            <tr>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/colored-film/blurryquadshot.jpeg" alt="blurryquadshot"></div></td>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/colored-film/breadpuppet17.jpg" alt="breadpuppet17"></div></td>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/colored-film/breadpuppet19.jpg" alt="breadpuppet19"></div></td>
+            </tr>
+            <tr>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/colored-film/breadpuppet20.jpg" alt="breadpuppet20"></div></td>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/colored-film/breadpuppet3.jpg" alt="breadpuppet3"></div></td>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/colored-film/breadpuppet32.jpg" alt="breadpuppet32"></div></td>
+            </tr>
+            <tr>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/colored-film/breadpuppet42(groupshot).jpg" alt="breadpuppet42 groupshot"></div></td>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/colored-film/breadpuppet46.jpg" alt="breadpuppet46"></div></td>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/colored-film/breadpuppet9(myraclose).jpg" alt="breadpuppet9 myraclose"></div></td>
+            </tr>
+            <tr>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/colored-film/cjatvmfaquadshot copy.jpg" alt="cjatvmfaquadshot"></div></td>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/colored-film/clothespinsfilm.jpg" alt="clothespinsfilm"></div></td>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/colored-film/croatiacompositebuildingbeachfilm.jpg" alt="croatia composite"></div></td>
+            </tr>
+            <tr>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/colored-film/croppedswiss.jpg" alt="croppedswiss"></div></td>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/colored-film/dylanmotelfilm.jpg" alt="dylanmotelfilm"></div></td>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/colored-film/elizinthesunonfilm.jpg" alt="elizinthesunonfilm"></div></td>
+            </tr>
+            <tr>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/colored-film/elizonhikefilm.jpg" alt="elizonhikefilm"></div></td>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/colored-film/girlsonfilm.jpg" alt="girlsonfilm"></div></td>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/colored-film/golfcartonfilm.jpg" alt="golfcartonfilm"></div></td>
+            </tr>
+            <tr>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/colored-film/graffitifilm.jpg" alt="graffitifilm"></div></td>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/colored-film/IMG_7683 copy.JPG" alt="IMG_7683"></div></td>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/colored-film/IMG_7685 copy.JPG" alt="IMG_7685"></div></td>
+            </tr>
+            <tr>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/colored-film/mikaatvmfaquadshot copy.jpg" alt="mikaatvmfaquadshot"></div></td>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/colored-film/motelfilm.jpg" alt="motelfilm"></div></td>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/colored-film/mountainsummitswissfilm.jpg" alt="mountainsummitswissfilm"></div></td>
+            </tr>
+            <tr>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/colored-film/neighboorsfilm.jpg" alt="neighboorsfilm"></div></td>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/colored-film/overlayedbuildings.jpg" alt="overlayedbuildings"></div></td>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/colored-film/silverwareonfilm.jpg" alt="silverwareonfilm"></div></td>
+            </tr>
+            <tr>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/colored-film/trainblurshot.jpg" alt="trainblurshot"></div></td>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/colored-film/trainonfilm.jpg" alt="trainonfilm"></div></td>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/colored-film/trainstationbenchfilm.jpg" alt="trainstationbenchfilm"></div></td>
+            </tr>
+            <tr>
+                <td><div class="item-box"><img class="scaled-photo" src="assets/images/film-photos/colored-film/windowinswissfilm.jpg" alt="windowinswissfilm"></div></td>
+            </tr>
+        </table>
+        <!-- <div class="header-center"> <center><br>Color film scans.</center> </div> -->
+    </div>
+
+
+<script>
+    // Ensure every <img> has loading="lazy" without modifying dozens of HTML lines.
+    // This runs after DOMContentLoaded so it won't interfere with layout during initial parsing.
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('img').forEach(function (img) {
+            if (!img.hasAttribute('loading')) img.setAttribute('loading', 'lazy');
+        });
+    });
+</script>
+
 </body>
 </html>

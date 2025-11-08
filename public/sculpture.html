@@ -19,7 +19,16 @@
 
 <style>
     body{
-        background-image: url("./assets/images/peg-board-perforated-texture-background-material-with-round-holes-pattern-board-vector-illustration_503038-3340.jpg");
+        /* background-color: rgb(104, 83, 55); */
+        background-image: url('assets/images/cloudgif.gif');
+        background-size: cover; 
+        background-repeat:repeat; 
+        background-position: center; 
+        /* background-image: url("assets/images/peg-board-perforated-texture-background-material-with-round-holes-pattern-board-vector-illustration_503038-3340.jpg"); */
+    }
+    
+    .layout {
+    width: 100%;
     }
     footer {
             position: fixed;
@@ -30,12 +39,13 @@
             text-align: center;
             padding: 10px;
         }
-    
-    .layout {
-      display: block;
-      min-height: 100vh;
+
+    .header-center {
+    text-align: center;
+    padding-bottom: 15px;
+    margin-left: 50px;
+    margin-right: 50px;
     }
-    
     table {
         border-collapse: collapse;
         /* border: 1px solid #000000; */
@@ -55,58 +65,40 @@
     }
    
    .item-box {
-     background-color: rgba(255, 253, 245, 0.126); 
-     padding: 11px;
-     padding-bottom: 0px;
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     box-sizing: border-box;
-    
-     min-height: 200px;
-     
-    }
-  .title-item-box {
-    background-color: rgba(255, 253, 245, 0.464); /* eggshell with subtle transparency */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin: 0 0 1rem 0;
-    padding: 6px 0;
-  }
-  .header-center {
-    background-color: rgba(255, 253, 245, 0.464); /* eggshell with subtle transparency */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin: 0 0 1rem 0;
-    padding: 6px 0;
-  }
+        
+        padding: 11px;
+        display: inline-block;
+        }
    .main {
-      flex: 1;
-      padding: 20px;
-      background: transparent;
-      
-      /* background-image: url('assets/images/wood2.jpg'); */
-      background-size: 90% auto;
-      background-repeat: repeat;
-      background-position: center center;
-      box-sizing: border-box;
-      border: 32px solid transparent;
-      border-radius: 12px;
-      margin-left: 15%;
-      margin-right: auto;
-      margin-top: 25px;
-      max-width: 1100px;
-      /* box-shadow: 0 4px 24px 0 rgba(0,0,0,0.13); */
-    }
-    #table1 img {
-        width: 260px !important;
-        height: 260px !important;
-        max-width: none !important;
-    }
+        /* background-image: url("assets/images/Screenshot 2025-11-08 102313.png"); */
+        /* background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center; */
+        /* border: 8px dotted rgba(89, 84, 63); */
+        /* make all .main sections appear continuous */
+        background: rgba(245, 252, 230, 0.85);
+        box-sizing: border-box;
+        border: 3px solid rgba(237, 243, 226, 0.85);
+        margin: 0;
+        padding: 40px 0;
+        width: 100%;
+        max-width: 1100px;
+        margin-left: 16%;
+        box-sizing: border-box;
+
+        }
+
+        .main + .main {
+        margin-top: 0; /* ensure no gap between stacked .main sections */
+        }
+    .scaled-photo {
+        width: var(--photo-scale);
+        max-width: 100%; 
+        height: auto; 
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        }
 
     .caption-link {
       color: #1565c0;
@@ -114,9 +106,6 @@
       cursor: pointer;
       font-weight: 500;
       font-size: 1.08em;
-      text-align: center;
-      display: inline-block;
-      margin-top: 0.7rem; /* small spacing directly under the photo */
     }
     .caption-link:visited {
       color: #0d47a1;
@@ -136,10 +125,13 @@
     padding: 10px;
 
     background: transparent;
-    /* background-image: url('assets/images/wood2.jpg'); */
+    background-image: url('assets/images/Screenshot\ 2025-11-08\ 102313.png');
     background-size: 250% auto;
     background-repeat: repeat;
     background-position: center center;
+
+
+    
   }
 
   table {
@@ -154,14 +146,12 @@
     margin-bottom: 20px;
   }
 
-  #table1 img,
-  #table2 img {
+  
+  .scaled-photo {
     width: 100% !important;
-    height: auto !important;
     max-width: 350px;
-    aspect-ratio: 1 / 1;   
+    height: auto !important;
   }
-
   .caption-link {
     display: block;
     text-align: center;
@@ -175,7 +165,12 @@
     align-items: center;
     text-align: center;
   }
-
+  .header-center {
+    text-align: center;
+    padding-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    }
   .header-right button {
     display: inline-block;
     margin: 5px;
@@ -200,61 +195,249 @@
     <div class="layout">
         <br>
         <div class="main">
-          <!-- <div class="header-center"> sculpture </div> -->
         <table id="table1">
+            <div class="header-center"> <i>A Peck</i>&nbsp;(2023)</div>
+            <td>
+        <div class="item-box">
+          <img class="scaled-photo" src="assets/images/sculpture/A Peck/a.peck.sculpture.closeup.documentation.1.jpg" alt="coding projects">
+
+        </div>
+                </td>
+                <td>
+                <div class = "item-box">
+          <img class="scaled-photo" src="assets/images/sculpture/A Peck/apecksculpture.documentaiton.jpg" alt="videos">
+                
+                </div>
+                </td>
+                <td>
+                <div class="item-box">
+           <img class="scaled-photo" src="assets/images/sculpture/A Peck/a.peck.sculpture.documentation.2.jpg" alt="photos">
+                </td>
+                
+        </table>
+        <div class="header-center"><center> <br> Sheet steel, Plasma cutter, MIG welder, Spray Paint <br> 4' x 3' x 1' </center></div>
+        </div>
+
+
+        <div class="main">
+        <table id="table1">
+            <div class="header-center"> <i>Cache</i> &nbsp;(2025) </div>
             <tr>
             <td>
                 <div class="item-box">
-                    <img id="project-photo" src="assets/images/sculpture/MOMmetalsculputre.documentation.fullsize.jpg" width="400" height="250" alt="coding projects">
-                    <a class="caption-link" href="sculpture.html">MOM</a>
-                    
+          <img class="scaled-photo" src="assets/images/sculpture/Cache and Cache2/cache.sculpture.documentation.3.jpg" alt="coding projects">
 
                 </div>
                 </td>
                 <td>
                 <div class = "item-box">
-                    <img id="jpg-photo" src="assets/images/sculpture/a.peck.sculpture.documentation.2 (1).jpg" width="1000" height="400" alt="photos">
-                    <a class="caption-link" href="digital.html">A Peck                      </a>
+          <img class="scaled-photo" src="assets/images/sculpture/Cache and Cache2/cache.sculpture.documentation.6.jpg" alt="videos">
+                
                 </div>
                 </td>
                 <td>
                 <div class="item-box">
-                    <img id="video-photo" src="assets/images/sculpture/everyoneishangingoutwithoutyou.sculpture.documentation.jpg" width="400" height="450" alt="videos">
-                    <a class="caption-link" href="film.html">everyone is hanging out with you</a>
+           <img class="scaled-photo" src="assets/images/sculpture/Cache and Cache2/IMG_0795_VSCO.JPG" alt="photos">
                 </td>
+            </tr>
+            <td>
+                <div class="item-box">
+          <img class="scaled-photo" src="assets/images/sculpture/Cache and Cache2/cache.sculpture.documentation.2025.12.jpg" alt="coding projects">
+
                 </div>
-                </tr>
+                </td>
+                <td>
+                <div class = "item-box">
+          <img class="scaled-photo" src="assets/images/sculpture/Cache and Cache2/cache.sculpture.documentation.2025.16.jpg" alt="videos">
+                
+                </div>
+                </td>
                 <td>
                 <div class="item-box">
-                    <img id="video-photo" src="assets/images/sculpture/everythingIhaveverlost.sculpture.documentation.jpg" width="400" height="450" alt="videos">
-                    <a class="caption-link" href="film.html">everythin I have ever lost</a>
+           <img class="scaled-photo" src="assets/images/sculpture/Cache and Cache2/cache.sculpture.documentation.5.jpg" alt="photos">
                 </td>
-                </div>
-                <td>
-                <div class="item-box">
-                    <img id="video-photo" src="assets/images/sculpture/IMG_0795_VSCO (1).JPG" width="400" height="450" alt="videos">
-                    <a class="caption-link" href="film.html">cache and cache 2</a>
-                </td>
-                </div>
-                <td>
-                <div class="item-box">
-                    <img id="video-photo" src="assets/images/sculpture/haftseen7.jpg" width="400" height="450" alt="videos">
-                    <a class="caption-link" href="film.html">haftseen7</a>
-                </td>
-                </div>
-                </tr>
+                
+                
+            
         </table>
-      </div>
-        <br><br>
-        <div class = "title-item-box">
-            <a class="caption-link" href="index.html">&lt;-- back to index</a>
-          </div>
+        <div class="header-center"> <center><br> Brass, copper, nickel, photos, slide magazines, wood, found stones, shells, and glass. <br><br> 2' x 2' x 3'</center> </div>
+        </div>
+    
+    
+        <div class="main">
+        <table id="table1">
+            <div class="header-center"> <i>Cross My Heart </i>&nbsp; (2024) </div> 
+            <tr>
+            <td>
+                <div class="item-box">
+                <img class="scaled-photo" src="assets/images/sculpture/Cross My Heart/crossmyheart.jpg" alt="coding projects">
+                </div>
+            </td>
+            <td>
+                <div class = "item-box">
+          <img class="scaled-photo" src="assets/images/sculpture/Cross My Heart/crossmyheartfullsize.sculpture.documentation.jpg" alt="videos">
+                
+                </div>
+            </td>
 
-        <br>
-        <br>
+            <td>
+                <div class="item-box">
+           <img class="scaled-photo" src="assets/images/sculpture/Cross My Heart/rockscrossheart.jpg" alt="photos">
+            </td>
+            </tr>
+            <tr>
+                <td>
+                <div class = "item-box">
+                    <img class="scaled-photo" src="assets/images/sculpture/Cross My Heart/crossmyheart.sculpture.closeup.documentation.jpg">
+                </div>
+                </td>
+                <td>
+                <div class = "item-box">
+                    <img class="scaled-photo" src="assets/images/sculpture/Cross My Heart/crossmyheart.sculpture.documentation.2.jpg">
+                </div>
+                </td>
+                
+            </tr>
+        </table>
+        <div class="header-center"> <center><br> Clotheslines, diary entries, sketches, clothespins, bathing suit, pajamas, bra, film printed cotton, laser engraved stones <br><br> 12' x 4' x 4'</center> </div>
+        </div>
+
+        <div class="main">
+        <table id="table1">
+            <div class="header-center"> <i>Everyone Is Hanging Out Without You</i>&nbsp;(2024)  </div>
+            <tr>
+            <td>
+                <div class="item-box">
+                <img class="scaled-photo" src="assets/images/sculpture/everyone is hanging out without you/everyoneishangingoutwithoutyou.sculpture.documentation.jpg" alt="coding projects">
+                </div>
+            </td>
+            </tr>
+        </table>
+        <div class="header-center"> <center> Inkjet prints, luan, AI powered roomba, remote controlled car, party music, multicolored light <br><br>6’ x 6’ (movement range varies depending on room size) </center></div>
+        </div>
+
+
+        <div class="main">
+        <table id="table1">
+            <div class="header-center"> <i>Everything I Have Ever Lost</i>&nbsp;(2024) </div>
+            <tr>
+            <td>
+                <div class="item-box">
+                <img class="scaled-photo" src="assets/images/sculpture/Everything I Have Ever Lost/everythingihaveeverlost.sculpture.documentation.2.jpg" alt="coding projects">
+                </div>
+            </td>
+            <td>
+                <div class = "item-box">
+          <img class="scaled-photo" src="assets/images/sculpture/Everything I Have Ever Lost/everythingIhaveeverlost.sculpture.documentation.3.jpg" alt="videos">
+                
+                </div>
+            </td>
+
+            <td>
+                <div class="item-box">
+           <img class="scaled-photo" src="assets/images/sculpture/Everything I Have Ever Lost/everythingIhaveverlost.sculpture.documentation.jpg" alt="photos">
+            </td>
+            </tr>
+            
+        </table>
+        <div class="header-center"> <center>Digital camera, Calypso by David Sedaris, hammer, scissors, left sock, gold watch, spoon, underwear, stuffed horse, I phone 5, blue earbuds, allegra, pink lighter, two iphone chargers, gold ring, bent pencil rod</center> </div>
+        </div>
+
+        <div class="main">
+        <table id="table1">
+            <div class="header-center"> <i>Haftseen</i>&nbsp;(2023) </div>
+            <tr>
+            <td>
+                <div class="item-box">
+                <img class="scaled-photo" src="assets/images/sculpture/Haftseen/haftseen7.jpg" alt="coding projects">
+                </div>
+            </td>
+            <td>
+                <div class = "item-box">
+          <img class="scaled-photo" src="assets/images/sculpture/Haftseen/haftseenbest.jpg" alt="videos">
+                
+                </div>
+            </td>
+
+           
+            </tr>
+        </table>
         
+        </div>
 
+        <div class="main">
+        <table id="table1">
+            <div class="header-center"> <i>MOM</i>&nbsp;(2024) </div>
+            <tr>
+            <td>
+                <div class="item-box">
+                <img class="scaled-photo" src="assets/images/sculpture/MOM/MOM.metalsculpture.documentation.closeupcards.jpg" alt="coding projects">
+                </div>
+            </td>
+            <td>
+                <div class = "item-box">
+          <img class="scaled-photo" src="assets/images/sculpture/MOM/MOMmetalsculputre.documentation.fullsize.jpg" alt="videos">
+                
+                </div>
+            </td>
+
+            <td>
+                <div class="item-box">
+           <img class="scaled-photo" src="assets/images/sculpture/MOM/MOMmetalsculpture.closeup.documentation.jpg" alt="photos">
+            </td>
+            </tr>
+            
+        </table>
+        <div class="header-center"> <center>Sheet steel, baseball cards, red thread <br><br>3’ x 4’ x 4’</center> </div>
+        </div>
+
+        <div class="main">
+        <table id="table1">
+            <div class="header-center"> <i>Trash Collages</i>&nbsp;(2023) </div>
+            <tr>
+            <td>
+                <div class="item-box">
+                <img class="scaled-photo" src="assets/images/sculpture/Trash collages/collage2.jpg" alt="coding projects">
+                </div>
+            </td>
+            <td>
+                <div class = "item-box">
+          <img class="scaled-photo" src="assets/images/sculpture/Trash collages/collage3.jpg" alt="videos">
+                
+                </div>
+            </td>
+
+            <td>
+                <div class="item-box">
+           <img class="scaled-photo" src="assets/images/sculpture/Trash collages/collage4.jpg" alt="photos">
+            </td>
+            </tr>
+            <tr>
+                <td>
+                <div class = "item-box">
+                    <img class="scaled-photo" src="assets/images/sculpture/Trash collages/collage5.jpg">
+                </div>
+                </td>
+                <td>
+                <div class = "item-box">
+                <img class="scaled-photo" src="assets/images/sculpture/Trash collages/collagefromafar.jpg">
+                </div>
+                </td>
+                <td>
+                <div class = "item-box">
+                <img class="scaled-photo" src="assets/images/sculpture/Trash collages/meandcollage.jpg">
+                </div>
+                </td>
+                
+            </tr>
+        </table>
+        <div class="header-center"> <center>Inkjet print, found rubber mats, discarded objects <br><br> 16’ x 24’ (shown as printed images) </center> </div>
+        </div>
     </div>
-   
+
+
+
+
+
 </body>
 </html>
