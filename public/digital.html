@@ -19,7 +19,18 @@
 
 <style>
     body{
-        background-image: url("./assets/images/peg-board-perforated-texture-background-material-with-round-holes-pattern-board-vector-illustration_503038-3340.jpg");
+        /* background-color: rgb(104, 83, 55); */
+        /* background-image: url('assets/images/cloudgif.gif'); */
+        background-image: url("assets/images/digital/cross-stich-2.webp");
+       
+        background-size: 60%; 
+        background-repeat:repeat; 
+        background-position: center;  
+
+      }
+    
+    .layout {
+    width: 100%;
     }
     footer {
             position: fixed;
@@ -30,12 +41,13 @@
             text-align: center;
             padding: 10px;
         }
-    
-    .layout {
-      display: block;
-      min-height: 100vh;
+
+    .header-center {
+    text-align: center;
+    padding-bottom: 15px;
+    margin-left: 50px;
+    margin-right: 50px;
     }
-    
     table {
         border-collapse: collapse;
         /* border: 1px solid #000000; */
@@ -55,48 +67,10 @@
     }
    
    .item-box {
-        background-color: rgba(255, 253, 245, 0.126); /* eggshell with subtle transparency */
+        
         padding: 11px;
         display: inline-block;
         }
-   .main {
-      flex: 1;
-      padding: 20px;
-      background: transparent;
-      background-image: url('assets/images/wood2.jpg');
-      background-size: 110% auto;
-      background-repeat: repeat;
-      background-position: center center;
-      box-sizing: border-box;
-      border: 32px solid transparent;
-      border-radius: 12px;
-      margin-left: 24%;
-      margin-right: auto;
-      margin-top: 25px;
-      max-width: 800px;
-      box-shadow: 0 4px 24px 0 rgba(0,0,0,0.13);
-    }
-
-    #table1 img {
-        width: 150px !important;
-        height: 150px !important;
-        max-width: none !important;
-    }
-
-    .caption-link {
-      color: #1565c0;
-      text-decoration: underline;
-      cursor: pointer;
-      font-weight: 500;
-      font-size: 1.08em;
-    }
-    .caption-link:visited {
-      color: #0d47a1;
-    }
-    .caption-link:hover {
-      color: #1976d2;
-    }
-    
     .image-modal {
         display: none;
         position: fixed;
@@ -119,6 +93,52 @@
         .image-modal.show img {
         transform: scale(1);
         }
+   .main {
+        /* background-image: url("assets/images/Screenshot 2025-11-08 102313.png"); */
+        /* background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center; */
+        /* border: 8px dotted rgba(89, 84, 63); */
+        /* make all .main sections appear continuous */
+        background: rgba(255, 255, 255, 0.534);
+        box-sizing: border-box;
+        border: 3px solid rgba(255, 255, 255, 0.85);
+        margin: 0;
+        padding: 40px 0;
+        width: 100%;
+        max-width: 1100px;
+        margin-left: 16%;
+        box-sizing: border-box;
+
+        }
+
+        .main + .main {
+        margin-top: 0; /* ensure no gap between stacked .main sections */
+        }
+    .scaled-photo {
+        width: var(--photo-scale);
+        max-width: 100%; 
+        height: auto; 
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        }
+
+    .caption-link {
+      color: #1565c0;
+      text-decoration: underline;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 1.08em;
+    }
+    .caption-link:visited {
+      color: #0d47a1;
+    }
+    .caption-link:hover {
+      color: #1976d2;
+    }
+    
+
 
 
 @media (max-width: 768px) {
@@ -129,11 +149,13 @@
     padding: 10px;
 
     background: transparent;
-    background-image: url('assets/images/wood2.jpg');
-    
-    background-size: 250% auto;
+    background-image: url('assets/images/Screenshot\ 2025-11-08\ 102313.png');
+    background-size: 100% auto;
     background-repeat: repeat;
     background-position: center center;
+
+
+    
   }
 
   table {
@@ -148,14 +170,12 @@
     margin-bottom: 20px;
   }
 
-  #table1 img,
-  #table2 img {
+  
+  .scaled-photo {
     width: 100% !important;
-    height: auto !important;
     max-width: 350px;
-    aspect-ratio: 1 / 1;   
+    height: auto !important;
   }
-
   .caption-link {
     display: block;
     text-align: center;
@@ -169,7 +189,12 @@
     align-items: center;
     text-align: center;
   }
-
+  .header-center {
+    text-align: center;
+    padding-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    }
   .header-right button {
     display: inline-block;
     margin: 5px;
@@ -183,7 +208,7 @@
 </style>
 
 <body>
-  <div class="image-modal" id="imageModal">
+    <div class="image-modal" id="imageModal">
     <img src="" alt="Enlarged photo">
     </div>
 
@@ -213,9 +238,8 @@
     <header class="site-header">
         <div class="header-left">Kiera O'Harrow</div>
         <div class="header-right">
-           
-            <button class="index-btn" onclick="document.location='CV.html'">Bio</button>
-            <button class="index-btn" onclick="document.location='contact.html'">Contact</button>
+            <button class="index-btn" onclick="spinAndGo('bio.html')">Bio</button>
+            <button class="index-btn" onclick="spinAndGo('contact.html')">Contact</button>
         </div>
     </header>
     
@@ -223,40 +247,33 @@
         <br>
         <div class="main">
         <table id="table1">
-            <td>
-                <div class="item-box">
-                    <img id="project-photo" src="assets/images/home-page/distorted hammer.png" width="300" height="200" alt="coding projects">
-                    <a class="caption-link" href="sculpture.html">sculpture</a>
-                    
+        <td>
+        <div class="item-box">
+          <img class="scaled-photo" src="assets/images/digital/johndoeposter10pmlighterblue (1).jpg" alt="coding projects">
 
-                </div>
-                </td>
-                <td>
-                <div class = "item-box">
-                    <img id="jpg-photo" src="assets/images/home-page/comp.png" width="1000" height="400" alt="photos">
-                    <a class="caption-link" href="digital.html">digital art</a>
-                </div>
-                </td>
-                <td>
+       
+        </td>
+        <td>
                 <div class="item-box">
-                    <img id="measuring-photo" src="assets/images/home-page/ruler.png">
-                    <a class="caption-link" href="design.html">design</a>
+                <img class="scaled-photo" src="assets/images/digital/unburdenyourspirittwo copy (1).jpg" alt="coding projects">
                 </div>
-                </td>
-                <td>
-                <div class="item-box">
-                    <img id="video-photo" src="assets/images/home-page/cam.png" width="400" height="450" alt="videos">
-                    <a class="caption-link" href="photography.html">film photography</a>
-                </td>
-                </div>
-                
-         </table>
+            </td>
+        <td>
+            <div class="item-box">
+            <img class="scaled-photo" src="assets/images/digital/solerajune15firsttrynavy (1).jpg" alt="coding projects">
+            </div>
+        </td>
         </div>
-        <br>
-        <br>
-        
 
+        </table>
+        </div>
+
+        
     </div>
-   
+
+
+
+
+
 </body>
 </html>

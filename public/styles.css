@@ -171,7 +171,7 @@
   0% { transform: rotate(0deg); }
   100% { transform: rotate(90deg); }
 }
-/* Simple layout for hammer and nails portfolio */
+
 body {
     margin: 0;
     padding: 0;
@@ -179,7 +179,7 @@ body {
     background: #f8f8f8;
     position: relative;
     font-family: "Amazon Ember",Arial,sans-serif;
-/* Header styles */
+
 .site-header {
   display: flex;
   justify-content: space-between;

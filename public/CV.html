@@ -4,42 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kiera O’Harrow — CV</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="styles.css">
   <style>
     body {
-      
+      background-image: url("assets/images/digital/cross-stich.jpg");
       font-family: Georgia, serif;
       color: #222;
       margin: 0;
       padding: 0;
     }
-    .header-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-
-  }
-    header {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .header-right button {
-        display: inline-block;
-        margin: 5px;
-    }
-   
+    
+    
+    
 
     .main {
-      margin: 40px auto 120px auto;
+      margin: 10px auto 120px auto;
       max-width: 900px;
       padding: 40px;
-      
-     
       box-sizing: border-box;
+      background: rgba(246, 246, 246, 0.85);
     }
 
     h1 {
@@ -74,16 +57,6 @@
       margin-bottom: 25px;
     }
 
-    footer {
-      text-align: center;
-      padding: 10px;
-      background: #fff;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      font-size: 0.9em;
-      
-    }
 
     @media (max-width: 768px) {
       .main {
@@ -98,13 +71,12 @@
   <header class="site-header">
         <div class="header-left">Kiera O'Harrow</div>
         <div class="header-right">
-            <button class="index-btn" onclick="spinAndGo('bio.html')">Bio</button>
-            <button class="index-btn" onclick="spinAndGo('contact.html')">Contact</button>
+            <button class="index-btn" onclick="document.location='index.html'">Index</button>
+            <button class="index-btn" onclick="document.location='contact.html'">Contact</button>
         </div>
     </header>
 
   <div class="main">
-    <h1>Curriculum Vitae</h1>
 
     <div class="section">
       <p>
@@ -182,8 +154,6 @@
     </div>
   </div>
 
-  <footer>
-    © 2025 Kiera O’Harrow
-  </footer>
+
 </body>
 </html>
