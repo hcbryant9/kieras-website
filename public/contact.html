@@ -72,15 +72,44 @@
         <div class="header-left">Kiera O'Harrow</div>
         <div class="header-right">
             <button class="index-btn" onclick="document.location='index.html'">Index</button>
-            <button class="index-btn" onclick="document.location='contact.html'">Contact</button>
+            <button class="index-btn" onclick="document.location='cv.html'">Bio</button>
         </div>
     </header>
+  <div class = "main">
+  <div class="section contact-info" style="text-align: center; font-size: 1.2em; line-height: 1.6em;">
+  <!-- <h1 style="margin-bottom: 10px;">Kiera O’Harrow</h1> -->
 
-  <div class="main">
+  <p>
+    <span id="email" style="cursor: pointer; text-decoration: underline;">
+      kieraoharrow@gmail.com
+    </span>
+    <span id="email-status" style="font-size: 0.8em; margin-left: 6px; opacity: 0;"></span>
+  </p>
+  <p>
+    Instagram: <a href="https://instagram.com/defrostedtangerine" target="_blank">
+      @defrostedtangerine
+    </a>
+  </p>
 
-    
-  </div>
-
+  <p>Currently: Richmond, VA</p>
+</div>
+</div>
 
 </body>
+<script>
+  const emailEl = document.getElementById("email");
+  const statusEl = document.getElementById("email-status");
+
+  emailEl.addEventListener("click", () => {
+    navigator.clipboard.writeText("kieraoharrow@gmail.com").then(() => {
+      statusEl.textContent = "Copied!";
+      statusEl.style.opacity = 1;
+
+      setTimeout(() => {
+        statusEl.style.opacity = 0;
+      }, 1000);
+    });
+  });
+</script>
+
 </html>
